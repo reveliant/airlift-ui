@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Airlift</title>
+    <link rel="stylesheet" href="http://cdn.oxiame.com/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdn.oxiame.com/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="http://cdn.oxiame.com/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/airlift.css">
+    <script src="http://cdn.oxiame.com/jquery/jquery.min.js"></script>
+    <script src="http://cdn.oxiame.com/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#airlift-navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Airlift</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="airlift-navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+    </nav>
+    <div class="container">
+    	<div class="col-md-9">
+    		<h1>Mes vols</h1>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th class="col-md-1">Date</th>
+                        <th class="col-md-2">Appareil</th>
+                        <th class="col-md-1">CdB</th>
+                        <th class="col-md-1">Double</th>
+                        <th class="col-md-3">Commandant de bord</th>
+                        <th class="col-md-3">Remarques</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01/01/15</td>
+                        <td>F-GDOG</td>
+                        <td>1 h 01</td>
+                        <td></td>
+                        <td>Moi</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>02/01/15</td>
+                        <td>F-GHVY</td>
+                        <td>0 h 52</td>
+                        <td></td>
+                        <td>Moi</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th></th>
+                        <th>Totaux : </th>
+                        <th>1 h 53</th>
+                        <th>0 h 00</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </tfoot>
+            </table>
+    	</div>
+        <div class="col-md-3">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <span class="h4">Mes heures</span>
+                </div>
+                <div class="panel-body">
+                    <p><b class="h1">183 h</b><span class="h3"> de vol</span></p>
+                    <p>dont <b class="h4">8 h 04</b> dans les 12 derniers mois</p>
+                    <p>dont</p>
+                    <ul>
+                        <li><b>6 h 23</b> comme commandant de bord</li>
+                        <li><b>1 h 01</b> en double commande</li>
+                        <li><b>4</b> décollages et atterissages</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <span class="h4">Mes avions</span>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-unstyled">
+                        <li>F-GBJK <small class="pull-right">3 h 27</small></li>
+                        <li>F-GDOG</li>
+                        <li>F-GHVY</li>
+                        <li>F-GSGO</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<span class="h4"pan>
