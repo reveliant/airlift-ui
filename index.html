@@ -2,13 +2,16 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
     <title>Airlift</title>
+    <meta name="description" content="Application de dématerialisation de carnet de vol">
     <link rel="stylesheet" href="https://cdn.oxiame.com/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.oxiame.com/bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="https://cdn.oxiame.com/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/airlift.css">
-    <script src="https://cdn.oxiame.com/jquery/jquery.min.js"></script>
-    <script src="https://cdn.oxiame.com/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -26,15 +29,18 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="airlift-navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Vols</a></li>
+                    <li><a href="#">Statistiques</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <img id="user-avatar" alt="" class="img-circle">
+                            <span id="user-name"></span>
+                            <span class="caret"></span>
+                        </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Profil</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">Déconnexion</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -116,6 +122,8 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.oxiame.com/jquery/jquery.min.js"></script>
+    <script src="https://cdn.oxiame.com/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/airlift.js"></script>
 </body>
 </html>
-<span class="h4"pan>
