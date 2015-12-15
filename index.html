@@ -15,7 +15,7 @@
 </head>
 <body>
     <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
+        <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#airlift-navbar-collapse" aria-expanded="false">
@@ -24,13 +24,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Airlift</a>
+                <a class="navbar-brand" href="#"><i class="fa fa-plane"></i> Airlift</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="airlift-navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Vols</a></li>
-                    <li><a href="#">Statistiques</a></li>
+                    <li><a href="#">Flights</a></li>
+                    <li><a href="#">Statistics</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             <img id="user-avatar" alt="" class="img-circle">
@@ -38,60 +38,154 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Profil</a></li>
+                            <li><a href="#">Profile</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">Déconnexion</a></li>
+                            <li><a href="#">Logout</a></li>
                         </ul>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container -->
     </nav>
-    <div class="container">
-    	<div class="col-md-9">
-    		<h1>Mes vols</h1>
-            <table class="table table-hover">
+    <div class="container-fluid">
+    	<div class="col-md-10">
+    		<h1>Flights</h1>
+            <table class="table table-hover table-bordered">
                 <thead>
                     <tr>
-                        <th class="col-md-1">Date</th>
-                        <th class="col-md-2">Appareil</th>
-                        <th class="col-md-1">CdB</th>
-                        <th class="col-md-1">Double</th>
-                        <th class="col-md-3">Commandant de bord</th>
-                        <th class="col-md-3">Remarques</th>
+                        <th>1</th>
+                        <th colspan="2">2</th>
+                        <th colspan="2">3</th>
+                        <th colspan="2">4</th>
+                        <th colspan="4">5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th colspan="2">8</th>
+                        <th colspan="2">9</th>
+                        <th colspan="4">10</th>
+                        <th colspan="3">11</th>
+                        <th>12</th>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">Date</th>
+                        <th colspan="2">Departure</th>
+                        <th colspan="2">Arrival</th>
+                        <th colspan="2">Aircraft</th>
+                        <th colspan="2">Single-pilot time</th>
+                        <th colspan="2">Multi-pilot time</th>
+                        <th rowspan="2">Total time</th>
+                        <th rowspan="2">Pilot-in- command</th>
+                        <th colspan="2">Landings</th>
+                        <th colspan="2">Operational cond. time</th>
+                        <th colspan="4">Pilot function time</th>
+                        <th colspan="3">Synthetic traning device session</th>
+                        <th rowspan="2">Remark</th>
+                    </tr>
+                    <tr class="subth">
+                        <th>Place</th>
+                        <th>Time</th>
+                        <th>Place</th>
+                        <th>Time</th>
+                        <th>Mark, model, variant</th>
+                        <th>Registration</th>
+                        <th>SE</th>
+                        <th>ME</th>
+                        <th>Multi-pilot</th>
+                        <th>Turbine</th>
+                        <th>Day</th>
+                        <th>Night</th>
+                        <th>Night</th>
+                        <th>IFR</th>
+                        <th>Pilot-in-command</th>
+                        <th>Co-pilot</th>
+                        <th>Dual</th>
+                        <th>Instructor</th>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Time</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>01/01/15</td>
-                        <td>F-GDOG</td>
-                        <td>1 h 01</td>
+                        <td>21/01/2015</td>
+                        <td>LFPE</td>
+                        <td>13:37</td>
+                        <td>LFPE</td>
+                        <td>14:40</td>
+                        <td>F152</td>
+                        <td>F-GBJK</td>
+                        <td>1:03</td>
                         <td></td>
-                        <td>Moi</td>
                         <td></td>
+                        <td></td>
+                        <td>1:03</td>
+                        <td>Myself</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td>1:03</td>
+                        <td></td>
+                        <td>1:03</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Remark</td>
                     </tr>
                     <tr>
-                        <td>02/01/15</td>
-                        <td>F-GHVY</td>
-                        <td>0 h 52</td>
-                        <td></td>
-                        <td>Moi</td>
-                        <td></td>
+                        <td>Date</td>
+                        <td>Place</td>
+                        <td>Time</td>
+                        <td>Place</td>
+                        <td>Time</td>
+                        <td>Mark, model, variant</td>
+                        <td>Registration</td>
+                        <td>SE</td>
+                        <td>ME</td>
+                        <td>Multi-pilot</td>
+                        <td>Turbine</td>
+                        <td>Total</td>
+                        <td>Name of PiC</td>
+                        <td>Day</td>
+                        <td>Night</td>
+                        <td>Night</td>
+                        <td>IFR</td>
+                        <td>Pilot-in-command</td>
+                        <td>Co-pilot</td>
+                        <td>Dual</td>
+                        <td>Instructor</td>
+                        <td>Date</td>
+                        <td>Type</td>
+                        <td>Time</td>
+                        <td>Remark</td>
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
+                        <th colspan="7">Total time</th>
+                        <th>1:53</th>
+                        <th>0:00</th>
+                        <th>0:00</th>
+                        <th>0:00</th>
+                        <th>1:53</th>
                         <th></th>
-                        <th>Totaux : </th>
-                        <th>1 h 53</th>
-                        <th>0 h 00</th>
-                        <th></th>
+                        <th>5</th>
+                        <th>0</th>
+                        <th>0:00</th>
+                        <th>0:00</th>
+                        <th>1:53</th>
+                        <th>0:00</th>
+                        <th>1:53</th>
+                        <th>0:00</th>
+                        <th colspan="2"></th>
+                        <th>0:00</th>
                         <th></th>
                     </tr>
                 </tfoot>
             </table>
     	</div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <span class="h4">Mes heures</span>
