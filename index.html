@@ -8,216 +8,178 @@
     <link rel="shortcut icon" href="img/favicon.png" type="image/png">
     <title>Airlift</title>
     <meta name="description" content="Application de dématerialisation de carnet de vol">
-    <link rel="stylesheet" href="https://cdn.oxiame.com/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.oxiame.com/bootstrap/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="https://cdn.oxiame.com/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/airlift.css">
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
         <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#airlift-navbar-collapse" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#"><i class="fa fa-plane"></i> Airlift</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="airlift-navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Flights</a></li>
-                    <li><a href="#">Statistics</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="navbar-toggler hidden-sm-up" data-toggle="collapse" data-target="#airlift-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="#">
+                <i class="fa fa-plane"></i>
+                Airlift
+            </a>
+            <div class="collapse navbar-collapse navbar-toggleable-xs" id="airlift-navbar-collapse">
+                <div class="nav navbar-nav">
+                    <a class="nav-item nav-link" href="#"><i class="fa fa-lg fa-plus-square"></i> <span class="only">Add a flight</span></a>
+                    <a class="nav-item nav-link" href="#"><i class="fa fa-lg fa-pie-chart"></i> <span class="only">Statistics</span></a>
+                </div>
+                <div class="nav navbar-nav pull-right">
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">
                             <img id="user-avatar" alt="" class="img-circle">
                             <span id="user-name"></span>
                             <span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Profile</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Logout</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container -->
-    </nav>
-    <div class="container-fluid">
-    	<div class="col-md-10">
-    		<h1>Flights</h1>
-            <table class="table table-hover table-bordered">
-                <thead>
-                    <tr>
-                        <th>1</th>
-                        <th colspan="2">2</th>
-                        <th colspan="2">3</th>
-                        <th colspan="2">4</th>
-                        <th colspan="4">5</th>
-                        <th>6</th>
-                        <th>7</th>
-                        <th colspan="2">8</th>
-                        <th colspan="2">9</th>
-                        <th colspan="4">10</th>
-                        <th colspan="3">11</th>
-                        <th>12</th>
-                    </tr>
-                    <tr>
-                        <th rowspan="2">Date</th>
-                        <th colspan="2">Departure</th>
-                        <th colspan="2">Arrival</th>
-                        <th colspan="2">Aircraft</th>
-                        <th colspan="2">Single-pilot time</th>
-                        <th colspan="2">Multi-pilot time</th>
-                        <th rowspan="2">Total time</th>
-                        <th rowspan="2">Pilot-in- command</th>
-                        <th colspan="2">Landings</th>
-                        <th colspan="2">Operational cond. time</th>
-                        <th colspan="4">Pilot function time</th>
-                        <th colspan="3">Synthetic traning device session</th>
-                        <th rowspan="2">Remark</th>
-                    </tr>
-                    <tr class="subth">
-                        <th>Place</th>
-                        <th>Time</th>
-                        <th>Place</th>
-                        <th>Time</th>
-                        <th>Mark, model, variant</th>
-                        <th>Registration</th>
-                        <th>SE</th>
-                        <th>ME</th>
-                        <th>Multi-pilot</th>
-                        <th>Turbine</th>
-                        <th>Day</th>
-                        <th>Night</th>
-                        <th>Night</th>
-                        <th>IFR</th>
-                        <th>Pilot-in-command</th>
-                        <th>Co-pilot</th>
-                        <th>Dual</th>
-                        <th>Instructor</th>
-                        <th>Date</th>
-                        <th>Type</th>
-                        <th>Time</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>21/01/2015</td>
-                        <td>LFPE</td>
-                        <td>13:37</td>
-                        <td>LFPE</td>
-                        <td>14:40</td>
-                        <td>F152</td>
-                        <td>F-GBJK</td>
-                        <td>1:03</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>1:03</td>
-                        <td>Myself</td>
-                        <td>3</td>
-                        <td>0</td>
-                        <td></td>
-                        <td></td>
-                        <td>1:03</td>
-                        <td></td>
-                        <td>1:03</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Remark</td>
-                    </tr>
-                    <tr>
-                        <td>Date</td>
-                        <td>Place</td>
-                        <td>Time</td>
-                        <td>Place</td>
-                        <td>Time</td>
-                        <td>Mark, model, variant</td>
-                        <td>Registration</td>
-                        <td>SE</td>
-                        <td>ME</td>
-                        <td>Multi-pilot</td>
-                        <td>Turbine</td>
-                        <td>Total</td>
-                        <td>Name of PiC</td>
-                        <td>Day</td>
-                        <td>Night</td>
-                        <td>Night</td>
-                        <td>IFR</td>
-                        <td>Pilot-in-command</td>
-                        <td>Co-pilot</td>
-                        <td>Dual</td>
-                        <td>Instructor</td>
-                        <td>Date</td>
-                        <td>Type</td>
-                        <td>Time</td>
-                        <td>Remark</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th colspan="7">Total time</th>
-                        <th>1:53</th>
-                        <th>0:00</th>
-                        <th>0:00</th>
-                        <th>0:00</th>
-                        <th>1:53</th>
-                        <th></th>
-                        <th>5</th>
-                        <th>0</th>
-                        <th>0:00</th>
-                        <th>0:00</th>
-                        <th>1:53</th>
-                        <th>0:00</th>
-                        <th>1:53</th>
-                        <th>0:00</th>
-                        <th colspan="2"></th>
-                        <th>0:00</th>
-                        <th></th>
-                    </tr>
-                </tfoot>
-            </table>
-    	</div>
-        <div class="col-md-2">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <span class="h4">Mes heures</span>
-                </div>
-                <div class="panel-body">
-                    <p><b class="h1">183 h</b><span class="h3"> de vol</span></p>
-                    <p>dont <b class="h4">8 h 04</b> dans les 12 derniers mois</p>
-                    <p>dont</p>
-                    <ul>
-                        <li><b>6 h 23</b> comme commandant de bord</li>
-                        <li><b>1 h 01</b> en double commande</li>
-                        <li><b>4</b> décollages et atterissages</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <span class="h4">Mes avions</span>
-                </div>
-                <div class="panel-body">
-                    <ul class="list-unstyled">
-                        <li>F-GBJK <small class="pull-right">3 h 27</small></li>
-                        <li>F-GDOG</li>
-                        <li>F-GHVY</li>
-                        <li>F-GSGO</li>
-                    </ul>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Logout</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </nav>
+    <div class="container-fluid">
+        
+        <div class="card-columns">
+            <div class="card card-inverse card-success" id="stats-hours">
+                <div class="card-block">
+                    <h4 class="card-title"><b class="h2" data-stats="grand-total">0</b> flight hours</h4>
+                    <p class="card-text"><b class="h5" data-stats="12m-total">0</b> in the last 12 months including :</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b data-stats="12m-pic">0:00</b> as pilot-in-command</li>
+                    <li class="list-group-item"><b data-stats="12m-dual">0:00</b> in dual</li>
+                    <li class="list-group-item"><b data-stats="12m-landings">0</b> landings</li>
+                </ul>
+            </div>
+            <div class="card card-inverse card-warning" id="stats-models">
+                <h4 class="card-block card-title">Models</h4>
+                <ul class="list-group list-group-flush"></ul>
+            </div>
+            <div class="card card-inverse card-warning" id="stats-aircraft">
+                <h4 class="card-block card-title">Aircrafts</h4>
+                <ul class="list-group list-group-flush"></ul>
+            </div>
+        </div>
+        <table class="table table-hover table-bordered" id="flight-table">
+            <thead class="thead-default">
+                <tr>
+                    <th>1</th>
+                    <th colspan="2">2</th>
+                    <th colspan="2">3</th>
+                    <th colspan="2">4</th>
+                    <th colspan="4">5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th colspan="2">8</th>
+                    <th colspan="2">9</th>
+                    <th colspan="4">10</th>
+                    <th colspan="3">11</th>
+                    <th>12</th>
+                </tr>
+                <tr>
+                    <th rowspan="2">Date</th>
+                    <th colspan="2">Departure</th>
+                    <th colspan="2">Arrival</th>
+                    <th colspan="2">Aircraft</th>
+                    <th colspan="2">Single-pilot</th>
+                    <th colspan="2">Multi-pilot</th>
+                    <th rowspan="2">Total time</th>
+                    <th rowspan="2">Pilot-in-command</th>
+                    <th colspan="2">Landings</th>
+                    <th colspan="2">Oper. cond.</th>
+                    <th colspan="4">Pilot function time</th>
+                    <th colspan="3">Synthetic training</th>
+                    <th rowspan="2">Remark</th>
+                </tr>
+                <tr class="subth">
+                    <th>Place</th>
+                    <th>Time</th>
+                    <th>Place</th>
+                    <th>Time</th>
+                    <th>Model</th>
+                    <th>Registration</th>
+                    <th>SE</th>
+                    <th>ME</th>
+                    <th>Multi-pilot</th>
+                    <th>Turbine</th>
+                    <th>Day</th>
+                    <th>Night</th>
+                    <th>Night</th>
+                    <th>IFR</th>
+                    <th>PiC</th>
+                    <th>Co-pilot</th>
+                    <th>Dual</th>
+                    <th>Instructor</th>
+                    <th>Date</th>
+                    <th>Type</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody id="flight-records">
+                <!--<tr>
+                    <td>Date</td>
+                    <td>Place</td>
+                    <td>Time</td>
+                    <td>Place</td>
+                    <td>Time</td>
+                    <td>Mark, model, variant</td>
+                    <td>Registration</td>
+                    <td>SE</td>
+                    <td>ME</td>
+                    <td>Multi-pilot</td>
+                    <td>Turbine</td>
+                    <td>Total</td>
+                    <td>Name of PiC</td>
+                    <td>Day</td>
+                    <td>Night</td>
+                    <td>Night</td>
+                    <td>IFR</td>
+                    <td>Pilot-in-command</td>
+                    <td>Co-pilot</td>
+                    <td>Dual</td>
+                    <td>Instructor</td>
+                    <td>Date</td>
+                    <td>Type</td>
+                    <td>Time</td>
+                    <td>Remark</td>
+                </tr>-->
+            </tbody>
+            <tfoot class="thead-default">
+                <tr>
+                    <th colspan="7">Total time</th>
+                    <th>0:00</th>
+                    <th>0:00</th>
+                    <th>0:00</th>
+                    <th>0:00</th>
+                    <th>0:00</th>
+                    <th></th>
+                    <th>0</th>
+                    <th>0</th>
+                    <th>0:00</th>
+                    <th>0:00</th>
+                    <th>0:00</th>
+                    <th>0:00</th>
+                    <th>0:00</th>
+                    <th>0:00</th>
+                    <th colspan="2"></th>
+                    <th>0:00</th>
+                    <th></th>
+                </tr>
+            </tfoot>
+        </table>
     </div>
-    <script src="https://cdn.oxiame.com/jquery/jquery.min.js"></script>
-    <script src="https://cdn.oxiame.com/bootstrap/js/bootstrap.min.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>-->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
     <script src="js/airlift.js"></script>
 </body>
 </html>
