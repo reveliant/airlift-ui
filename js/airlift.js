@@ -1,24 +1,34 @@
 /*jshint nocomma: true, nonew: true, plusplus: true, strict: true, browser: true, devel: true, jquery: true*/
 
-Date.prototype.diff = function(date, datepart) {	
+Date.prototype.diff = function(date) {	
     'use strict';
-    datepart = datepart.toLowerCase();
-    var diff = this - date,
-        divideBy = {
-            y: 31536000000,
-            m: 2628000000,
-            w: 604800000, 
-            d: 86400000, 
-            h: 3600000, 
-            n: 60000, 
-            s: 1000
-        };
-    if (divideBy[datepart] !== undefined) {
-        return Math.floor(diff/divideBy[datepart]);
-    } else {
-        console.error("Wrong date interval specifier: expected w, d, h, n or s, got " + datepart);
-        return null;
-    }
+    var diff = this - date;
+    return {
+        years: Math.floor(diff / 31536000000),
+        months: Math.floor(diff / 2628000000),
+        weeks: Math.floor(diff / 604800000), 
+        days: Math.floor(diff / 86400000), 
+        hours: Math.floor(diff / 3600000), 
+        minutes: Math.floor(diff / 60000), 
+        seconds: Math.floor(diff / 1000)
+    };
+};
+
+Number.prototype.time = function() {	
+    'use strict';
+    var hours = Math.floor(this / 60),
+        minutes = this % 60;
+    return {
+        hours: hours,
+        minutes: minutes,
+        text: hours + ':' + (minutes < 10 ? '0' : '') + minutes
+    };
+};
+
+Number.prototype.toTimeString = function() {	
+    'use strict';
+    var time = this.time();
+    return time.hours + ':' + (time.minutes < 10 ? '0' : '') + time.minutes;
 };
 
 function RestAPI (url) {
@@ -169,14 +179,8 @@ function Airlift () {
     };
     
     this.flightTime = function (time) {
-        var hours = Math.floor(time / 60),
-            minutes = time % 60;
-        return hours + ':' + (minutes < 10 ? '0' : '') + minutes;
-    };
-    
-    this.posFlightTime = function (time) {
         if (time !== null && time > 0) {
-            return my.flightTime(time);
+            return time.toTimeString();
         } else {
             return null;
         }
@@ -267,7 +271,7 @@ function Airlift () {
         priv.total.function.instructor += flight.function.instructor;
         priv.total.synthetic += flight.synthetic.time;
         
-        if ((new Date).diff(flight.date, 'y') < 1) {
+        if ((new Date()).diff(flight.date).years < 1) {
             priv.total12months.time.single.se += flight.time.single.se;
             priv.total12months.time.single.me += flight.time.single.me;
             priv.total12months.time.multi.multi += flight.time.multi.multi;
@@ -467,30 +471,30 @@ function Airlift () {
         if (space > 1) dateSpace.attr('colspan', space);
         
         // 5 - Single-pilot Time
-        if (my.options.show.time.single.se) $('<th/>').text(my.flightTime(priv.total.time.single.se)).appendTo(row);
-        if (my.options.show.time.single.me) $('<th/>').text(my.flightTime(priv.total.time.single.me)).appendTo(row);
+        if (my.options.show.time.single.se) $('<th/>').text(priv.total.time.single.se.toTimeString()).appendTo(row);
+        if (my.options.show.time.single.me) $('<th/>').text(priv.total.time.single.me.toTimeString()).appendTo(row);
         // 5 - Multi-pilot Time
-        if (my.options.show.time.multi.multi) $('<th/>').text(my.flightTime(priv.total.time.multi.multi)).appendTo(row);
-        if (my.options.show.time.multi.turbine) $('<th/>').text(my.flightTime(priv.total.time.multi.turbine)).appendTo(row);
+        if (my.options.show.time.multi.multi) $('<th/>').text(priv.total.time.multi.multi.toTimeString()).appendTo(row);
+        if (my.options.show.time.multi.turbine) $('<th/>').text(priv.total.time.multi.turbine.toTimeString()).appendTo(row);
         // 6 - Total time
-        if (my.options.show.total) $('<th/>').text(my.flightTime(priv.total.grandTotal)).appendTo(row);
+        if (my.options.show.total) $('<th/>').text(priv.total.grandTotal.toTimeString()).appendTo(row);
         // 7 - Pilot-in-Command
         if (my.options.show.pic) $('<th/>').appendTo(row);
         // 8 -Landings
         if (my.options.show.landings.day) $('<th/>').text(priv.total.landings.day).appendTo(row);
         if (my.options.show.landings.night) $('<th/>').text(priv.total.landings.night).appendTo(row);
         // 9 - Operation Conditions Time
-        if (my.options.show.conditions.night) $('<th/>').text(my.flightTime(priv.total.conditions.night)).appendTo(row);
-        if (my.options.show.conditions.ifr) $('<th/>').text(my.flightTime(priv.total.conditions.ifr)).appendTo(row);
+        if (my.options.show.conditions.night) $('<th/>').text(priv.total.conditions.night.toTimeString()).appendTo(row);
+        if (my.options.show.conditions.ifr) $('<th/>').text(priv.total.conditions.ifr.toTimeString()).appendTo(row);
         // 10 - Pilot Function Time
-        if (my.options.show.function.pic) $('<th/>').text(my.flightTime(priv.total.function.pic)).appendTo(row);
-        if (my.options.show.function.copilot) $('<th/>').text(my.flightTime(priv.total.function.copilot)).appendTo(row);
-        if (my.options.show.function.dual) $('<th/>').text(my.flightTime(priv.total.function.dual)).appendTo(row);
-        if (my.options.show.function.instructor) $('<th/>').text(my.flightTime(priv.total.function.instructor)).appendTo(row);
+        if (my.options.show.function.pic) $('<th/>').text(priv.total.function.pic.toTimeString()).appendTo(row);
+        if (my.options.show.function.copilot) $('<th/>').text(priv.total.function.copilot.toTimeString()).appendTo(row);
+        if (my.options.show.function.dual) $('<th/>').text(priv.total.function.dual.toTimeString()).appendTo(row);
+        if (my.options.show.function.instructor) $('<th/>').text(priv.total.function.instructor.toTimeString()).appendTo(row);
         // 11 - Synthetic Training Device Session
         if (my.options.show.synthetic.date || my.options.show.synthetic.type) syntheticSpace.appendTo(row);
         if (my.options.show.synthetic.date && my.options.show.synthetic.type) syntheticSpace.attr('colspan', 2);
-        if (my.options.show.synthetic.time) $('<th/>').text(my.flightTime()).appendTo(row);
+        if (my.options.show.synthetic.time) $('<th/>').text(priv.total.synthetic.toTimeString()).appendTo(row);
         // 12 - Remarks
         if (my.options.show.remark) $('<th/>').appendTo(row);
     };
@@ -510,30 +514,30 @@ function Airlift () {
         if (my.options.show.aircraft.model) $('<td/>').text(flight.aircraft.model).appendTo(row);
         if (my.options.show.aircraft.registration) $('<td/>').text(flight.aircraft.registration).appendTo(row);
         // 5 - Single-pilot Time
-        if (my.options.show.time.single.se) $('<td/>').text(my.posFlightTime(flight.time.single.se)).appendTo(row);
-        if (my.options.show.time.single.me) $('<td/>').text(my.posFlightTime(flight.time.single.me)).appendTo(row);
+        if (my.options.show.time.single.se) $('<td/>').text(my.flightTime(flight.time.single.se)).appendTo(row);
+        if (my.options.show.time.single.me) $('<td/>').text(my.flightTime(flight.time.single.me)).appendTo(row);
         // 5 - Multi-pilot Time
-        if (my.options.show.time.multi.multi) $('<td/>').text(my.posFlightTime(flight.time.multi.multi)).appendTo(row);
-        if (my.options.show.time.multi.turbine) $('<td/>').text(my.posFlightTime(flight.time.multi.turbine)).appendTo(row);
+        if (my.options.show.time.multi.multi) $('<td/>').text(my.flightTime(flight.time.multi.multi)).appendTo(row);
+        if (my.options.show.time.multi.turbine) $('<td/>').text(my.flightTime(flight.time.multi.turbine)).appendTo(row);
         // 6 - Total time
-        if (my.options.show.total) $('<td/>').text(my.flightTime(flight.total)).appendTo(row);
+        if (my.options.show.total) $('<td/>').text(flight.total.toTimeString()).appendTo(row);
         // 7 - Pilot-in-Command
         if (my.options.show.pic) $('<td/>').text(flight.pic).appendTo(row);
         // 8 -Landings
         if (my.options.show.landings.day) $('<td/>').text(flight.landings.day).appendTo(row);
         if (my.options.show.landings.night) $('<td/>').text(flight.landings.night).appendTo(row);
         // 9 - Operation Conditions Time
-        if (my.options.show.conditions.night) $('<td/>').text(my.posFlightTime(flight.conditions.night)).appendTo(row);
-        if (my.options.show.conditions.ifr) $('<td/>').text(my.posFlightTime(flight.conditions.ifr)).appendTo(row);
+        if (my.options.show.conditions.night) $('<td/>').text(my.flightTime(flight.conditions.night)).appendTo(row);
+        if (my.options.show.conditions.ifr) $('<td/>').text(my.flightTime(flight.conditions.ifr)).appendTo(row);
         // 10 - Pilot Function Time
-        if (my.options.show.function.pic) $('<td/>').text(my.posFlightTime(flight.function.pic)).appendTo(row);
-        if (my.options.show.function.copilot) $('<td/>').text(my.posFlightTime(flight.function.copilot)).appendTo(row);
-        if (my.options.show.function.dual) $('<td/>').text(my.posFlightTime(flight.function.dual)).appendTo(row);
-        if (my.options.show.function.instructor) $('<td/>').text(my.posFlightTime(flight.function.instructor)).appendTo(row);
+        if (my.options.show.function.pic) $('<td/>').text(my.flightTime(flight.function.pic)).appendTo(row);
+        if (my.options.show.function.copilot) $('<td/>').text(my.flightTime(flight.function.copilot)).appendTo(row);
+        if (my.options.show.function.dual) $('<td/>').text(my.flightTime(flight.function.dual)).appendTo(row);
+        if (my.options.show.function.instructor) $('<td/>').text(my.flightTime(flight.function.instructor)).appendTo(row);
         // 11 - Synthetic Training Device Session
         if (my.options.show.synthetic.date) $('<td/>').append($('<time/>').text(flight.synthetic.date.toLocaleString()).attr('datetime', flight.synthetic.date.toISOString())).appendTo(row);
         if (my.options.show.synthetic.type) $('<td/>').text(flight.synthetic.type).appendTo(row);
-        if (my.options.show.synthetic.time) $('<td/>').text(my.posFlightTime(flight.synthetic.time)).appendTo(row);
+        if (my.options.show.synthetic.time) $('<td/>').text(my.flightTime(flight.synthetic.time)).appendTo(row);
         // 12 - Remarks
         if (my.options.show.remark) $('<td/>').text(flight.remark).appendTo(row);
     };
@@ -552,10 +556,16 @@ function Airlift () {
     };
     
     this.showHours = function () {
-        $('[data-stats="grand-total"]').text(my.flightTime(priv.total.grandTotal));
-        $('[data-stats="12m-total"]').text(my.flightTime(priv.total12months.grandTotal));
-        $('[data-stats="12m-pic"]').text(my.flightTime(priv.total12months.function.pic));
-        $('[data-stats="12m-dual"]').text(my.flightTime(priv.total12months.function.dual));
+        $('#stats-hours').removeClass('card-warning card-success card-info');
+        if(priv.total.grandTotal.time().hours < 12) {
+            $('#stats-hours').addClass('card-warning');
+        } else {
+            $('#stats-hours').addClass('card-success');
+        }
+        $('[data-stats="grand-total"]').text(priv.total.grandTotal.toTimeString());
+        $('[data-stats="12m-total"]').text(priv.total12months.grandTotal.toTimeString());
+        $('[data-stats="12m-pic"]').text(priv.total12months.function.pic.toTimeString());
+        $('[data-stats="12m-dual"]').text(priv.total12months.function.dual.toTimeString());
         $('[data-stats="12m-landings"]').text(priv.total12months.landings.day + priv.total12months.landings.night);
     };
     
@@ -565,7 +575,7 @@ function Airlift () {
         for (var entry in sorted) {
            if (sorted[entry] !== undefined) {
                $('<li/>').addClass('list-group-item').text(entry).appendTo('#stats-aircraft ul')
-                   .append($('<small/>').text(my.flightTime(sorted[entry])).addClass('pull-right'));
+                   .append($('<small/>').text(sorted[entry].toTimeString()).addClass('pull-right'));
            }
         }
     };
@@ -576,7 +586,7 @@ function Airlift () {
         for (var entry in sorted) {
            if (sorted[entry] !== undefined) {
                $('<li/>').addClass('list-group-item').text(entry).appendTo('#stats-models ul')
-                   .append($('<small/>').text(my.flightTime(sorted[entry])).addClass('pull-right'));
+                   .append($('<small/>').text(sorted[entry].toTimeString()).addClass('pull-right'));
            }
         }
     };
