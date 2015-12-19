@@ -556,17 +556,52 @@ function Airlift () {
     };
     
     this.showHours = function () {
-        $('#stats-hours').removeClass('card-warning card-success card-info');
-        if(priv.total.grandTotal.time().hours < 12) {
-            $('#stats-hours').addClass('card-warning');
-        } else {
-            $('#stats-hours').addClass('card-success');
-        }
+        var conditions = true;
         $('[data-stats="grand-total"]').text(priv.total.grandTotal.toTimeString());
+        
+        // Total time required in 12 last months: 12 hours
         $('[data-stats="12m-total"]').text(priv.total12months.grandTotal.toTimeString());
+        if (priv.total12months.grandTotal.time().hours < 12) {
+            $('[data-stats="12m-total"]').prepend(" ").prepend($('<i/>').addClass('fa fa-circle text-danger'));
+            conditions = false;
+        } else {
+            $('[data-stats="12m-total"]').prepend(" ").prepend($('<i/>').addClass('fa fa-check-circle text-success'));
+        }
+        
+        // Pilot-in-command time required in 12 last months: 6 hours
         $('[data-stats="12m-pic"]').text(priv.total12months.function.pic.toTimeString());
+        if (priv.total12months.function.pic.time().hours < 6) {
+            $('[data-stats="12m-pic"]').prepend(" ").prepend($('<i/>').addClass('fa fa-circle text-danger'));
+            conditions = false;
+        } else {
+            $('[data-stats="12m-pic"]').prepend(" ").prepend($('<i/>').addClass('fa fa-check-circle text-success'));
+        }
+        
+        // Training time required in 12 last months: 1 hour
         $('[data-stats="12m-dual"]').text(priv.total12months.function.dual.toTimeString());
+        if (priv.total12months.function.dual.time().hours < 1) {
+            $('[data-stats="12m-dual"]').prepend(" ").prepend($('<i/>').addClass('fa fa-circle text-danger'));
+            conditions = false;
+        } else {
+            $('[data-stats="12m-dual"]').prepend(" ").prepend($('<i/>').addClass('fa fa-check-circle text-success'));
+        }
+        
+        // Landgings required in 12 last months: 12
         $('[data-stats="12m-landings"]').text(priv.total12months.landings.day + priv.total12months.landings.night);
+        if ((priv.total12months.landings.day + priv.total12months.landings.night) < 12) {
+            $('[data-stats="12m-landings"]').prepend(" ").prepend($('<i/>').addClass('fa fa-circle text-danger'));
+            conditions = false;
+        } else {
+            $('[data-stats="12m-landings"]').prepend(" ").prepend($('<i/>').addClass('fa fa-check-circle text-success'));
+        }
+        
+        $('#stats-hours').removeClass('card-warning card-success card-info');
+        if (conditions) {
+            $('#stats-hours').addClass('card-success');
+        } else {
+            $('#stats-hours').addClass('card-warning');
+        }
+            
     };
     
     this.showAircrafts = function () {
