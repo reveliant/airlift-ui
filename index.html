@@ -1,80 +1,6 @@
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="img/favicon.png" type="image/png">
-    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
-    <title>Airlift</title>
-    <meta name="description" content="Application de dématerialisation de carnet de vol">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/airlift.css">
-</head>
-<body>
-    <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
-        <div class="container-fluid">
-            <button type="button" class="navbar-toggler hidden-sm-up" data-toggle="collapse" data-target="#airlift-navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand" href="#">
-                <i class="fa fa-plane"></i>
-                Airlift
-            </a>
-            <div class="collapse navbar-collapse navbar-toggleable-xs" id="airlift-navbar-collapse">
-                <div class="nav navbar-nav">
-                    <a class="nav-item nav-link" href="#"><i class="fa fa-lg fa-plus-square"></i> <span class="only">Add a flight</span></a>
-                    <a class="nav-item nav-link" href="#"><i class="fa fa-lg fa-pie-chart"></i> <span class="only">Statistics</span></a>
-                </div>
-                <div class="nav navbar-nav pull-right">
-                    <div class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">
-                            <img id="user-avatar" alt="" class="img-circle">
-                            <span id="user-name"></span>
-                            <span class="caret"></span>
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Profile</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Logout</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <div class="container-fluid">
-        
-        <div class="card-columns">
-            <div class="card card-inverse card-success" id="stats-total">
-                <div class="card-block">
-                    <h4 class="card-title">Flying time</h4>
-                    <p class="card-text"><b class="h3" data-stats="grand-total">0</b></p>
-                </div>
-            </div>
-            <div class="card card-inverse card-info" id="stats-hours">
-                <div class="card-block">
-                    <h4 class="card-title">Flying time in last 12 months</h4>
-                    <p class="card-text">of license validity</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><b data-stats="12m-total">0</b> total</li>
-                    <li class="list-group-item"><b data-stats="12m-pic">0:00</b> as pilot-in-command</li>
-                    <li class="list-group-item"><b data-stats="12m-dual">0:00</b> in dual</li>
-                    <li class="list-group-item"><b data-stats="12m-landings">0</b> landings</li>
-                </ul>
-            </div>
-            <div class="card card-inverse card-info" id="stats-types">
-                <h4 class="card-block card-title">Types</h4>
-                <ul class="list-group list-group-flush"></ul>
-            </div>
-            <div class="card card-inverse card-info" id="stats-aircraft">
-                <h4 class="card-block card-title">Aircrafts</h4>
-                <ul class="list-group list-group-flush"></ul>
-            </div>
-        </div>
+---
+layout: index
+---
         <table class="table table-hover table-bordered" id="flight-table">
             <thead class="thead-default">
                 <tr>
@@ -183,10 +109,3 @@
             </tfoot>
         </table>
     </div>
-    <!--<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>-->
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="js/tether.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
-    <script src="js/airlift.js"></script>
-</body>
-</html>
