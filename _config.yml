@@ -1,0 +1,13 @@
+# Site settings
+title: Airlift
+author: Rémi Dubois
+
+description: Paperless flight logbook app
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://airlift.oxiame.net" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+
+sass:
+    style: compressed
