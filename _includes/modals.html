@@ -1,0 +1,203 @@
+    <div class="modal fade" role="dialog" id="new-flight-modal">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <form id="new-flight-form">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title"><i class="fa fa-lg fa-plus-square"></i> New flight</h4>
+                    </div>
+                    <div class="modal-body">
+                        <fieldset class="form-group">
+                            <legend>Date</legend>
+                            <div class="row"> 
+                                <div class="col-sm-4">
+                                    <input type="date" class="form-control" id="new-date" placeholder="YYYY-MM-DD">
+                                </div>
+                                <small class="text-muted col-sm-8">Please use ISO 8601 formated dates (YYYY-MM-DD). European formats (DD/MM/YYYY or so) might also be used.</small>
+                            </div>
+                        </fieldset>
+                        <div class="row">
+                            <fieldset class="form-group col-sm-4">
+                                <div class="h4">Departure</div>
+                                <div class="row">
+                                    <label class="col-sm-6 form-control-label" for="new-departure-place">Place</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" maxlength="4" pattern="[A-Z]{4}" class="form-control" id="new-departure-place" placeholder="LFFF">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-sm-6 form-control-label" for="new-departure-time">Time</label>
+                                    <div class="col-sm-5">
+                                        <input type="time" class="form-control" id="new-departure-time" placeholder="HH:MM">
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form-group col-sm-4">
+                                <div class="h4">Arrival</div>
+                                <div class="row">
+                                    <label class="col-sm-6 form-control-label" for="new-arrival-place">Place</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" maxlength="4" pattern="[A-Z]{4}" class="form-control" id="new-arrival-place" placeholder="LFFF">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-sm-6 form-control-label" for="new-arrival-time">Time</label>
+                                    <div class="col-sm-5">
+                                        <input type="time" class="form-control" id="new-arrival-time" placeholder="HH:MM">
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form-group col-sm-4">
+                                <div class="h4">Aircraft</div>
+                                <div class="row">
+                                    <label class="col-sm-6 form-control-label" for="new-aircraft-type">Type</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" pattern="[A-Z1-9]+" class="form-control" id="new-aircraft-type" placeholder="C152">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-sm-6 form-control-label" for="new-aircraft-registration">Registration</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="new-aircraft-resgistration" placeholder="F-GABC">
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <fieldset class="form-group">
+                            <legend>Flight time</legend>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="h5">Single-pilot</div>
+                                    <div class="row">
+                                        <label class="col-sm-6 form-control-label" for="new-time-single-se">Single-engine</label>
+                                        <div class="col-sm-4">
+                                            <input type="time" class="form-control" id="new-time-single-se" placeholder="HH:MM">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-6 form-control-label" for="new-time-single-me">Multi-engine</label>
+                                        <div class="col-sm-4">
+                                            <input type="time" class="form-control" id="new-time-single-me" placeholder="HH:MM">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="h5">Multi-pilot</div>
+                                    <div class="row">
+                                        <label class="col-sm-6 form-control-label" for="new-time-multi-multi">Multi-pilot</label>
+                                        <div class="col-sm-4">
+                                            <input type="time" class="form-control" id="new-time-multi-multi" placeholder="HH:MM">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-6 form-control-label" for="new-time-multi-turbine">Turbine</label>
+                                        <div class="col-sm-4">
+                                            <input type="time" class="form-control" id="new-time-multi-turbine" placeholder="HH:MM">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <legend>Pilot-in-command</legend>
+                            <div class="row">
+                                <label class="col-sm-3 form-control-label" for="new-pic">Name</label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" id="new-pic" placeholder="John Doe">
+                                </div>
+                                <label class="col-sm-2 form-control-label" for="new-pic-me">
+                                    <input type="checkbox" id="new-pic-me"> It's me
+                                </label>
+                            </div>
+                        </fieldset>
+                        <div class="row">
+                            <fieldset class="form-group col-sm-6">
+                                <div class="h4">Landings</div>
+                                <div class="row">
+                                    <label class="col-sm-6 form-control-label" for="new-landings-day">Day</label>
+                                    <div class="col-sm-3">
+                                        <input type="number" min="0" class="form-control" id="new-landings-day" placeholder="0">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-sm-6 form-control-label" for="new-landings-night">Night</label>
+                                    <div class="col-sm-3">
+                                        <input type="number" min="0" class="form-control" id="new-landings-night" placeholder="0">
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form-group col-sm-6">
+                                <legend>Operational condition time</legend>
+                                <div class="row">
+                                    <label class="col-sm-6 form-control-label" for="new-conditions-night">Night</label>
+                                    <div class="col-sm-5">
+                                        <input type="time" class="form-control" id="new-conditions-night" placeholder="HH:MM">
+                                    </div>
+                                    <label class="col-sm-6 form-control-label" for="new-conditions-ifr">IFR</label>
+                                    <div class="col-sm-5">
+                                        <input type="time" class="form-control" id="new-conditions-ifr" placeholder="HH:MM">
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="row">
+                            <fieldset class="form-group col-sm-6">
+                                <legend>Pilot function time</legend>
+                                <div class="row">                            
+                                    <label class="col-sm-6 form-control-label" for="new-function-pic">Pilot-in-command</label>
+                                    <div class="col-sm-4">
+                                        <input type="time" class="form-control" id="new-function-pic" placeholder="HH:MM">
+                                    </div>
+                                </div>
+                                <div class="row"> 
+                                    <label class="col-sm-6 form-control-label" for="new-function-copilot">Copilot</label>
+                                    <div class="col-sm-4">
+                                        <input type="time" class="form-control" id="new-function-copilot" placeholder="HH:MM">
+                                    </div>
+                                </div>
+                                <div class="row"> 
+                                    <label class="col-sm-6 form-control-label" for="new-function-dual">Dual</label>
+                                    <div class="col-sm-4">
+                                        <input type="time" class="form-control" id="new-function-dual" placeholder="HH:MM">
+                                    </div>
+                                </div>
+                                <div class="row"> 
+                                    <label class="col-sm-6 form-control-label" for="new-function-instructor">Instructor</label>
+                                    <div class="col-sm-4">
+                                        <input type="time" class="form-control" id="new-function-instructor" placeholder="HH:MM">
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form-group col-sm-6">
+                                <legend>Synthetic training devices time</legend>
+                                <div class="row">
+                                    <label class="col-sm-6 form-control-label" for="new-synthetic-date">Date</label>
+                                    <div class="col-sm-5">
+                                        <input type="date" class="form-control" id="new-synthetic-date" placeholder="YYYY-MM-DD">
+                                    </div>
+                                    <label class="col-sm-6 form-control-label" for="new-synthetic-type">Type</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="new-synthetic-type" placeholder="">
+                                    </div>
+                                    <label class="col-sm-6 form-control-label" for="new-synthetic-time">Time</label>
+                                    <div class="col-sm-4">
+                                        <input type="time" class="form-control" id="new-synthetic-time" placeholder="HH:MM">
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <fieldset class="form-group">
+                            <legend>Remarks</legend>
+                            <textarea class="form-control" id="new-remarks" placeholder="Enter remarks here..."></textarea>
+                        </fieldset>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="reset" form="new-flight-form" class="btn btn-secondary" data-dismiss="modal" value="Cancel">
+                        <input type="submit" form="new-flight-form" class="btn btn-primary" value="Save">
+                    </div>                    
+                </form>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
