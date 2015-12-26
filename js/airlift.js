@@ -106,7 +106,7 @@ function Airlift () {
     
     priv.session = {};
     priv.flights = [];
-    priv.aircrafts = { models: [], registration: [] };
+    priv.aircrafts = { types: [], registration: [] };
     
     priv.total = {
         time: {
@@ -136,7 +136,7 @@ function Airlift () {
             date: true,
             departure: { place: true, time: true },
             arrival: { place: true, time: true },
-            aircraft: { model: true, registration: true},
+            aircraft: { type: true, registration: true},
             time: {
                 single: { se: true, me: true },
                 multi: { multi: true, turbine: true },
@@ -217,7 +217,7 @@ function Airlift () {
                 time: flight.arrival.time || null,
             },
             aircraft: {
-                model: flight.aircraft.model || null,
+                type: flight.aircraft.type || null,
                 registration: flight.aircraft.registration || null
             },
             time: {
@@ -288,13 +288,13 @@ function Airlift () {
             priv.total12months.synthetic += flight.synthetic.time;
         }
         
-        if (priv.aircrafts.models[flight.aircraft.model] === undefined) {
-            priv.aircrafts.models[flight.aircraft.model] = 0;
+        if (priv.aircrafts.types[flight.aircraft.type] === undefined) {
+            priv.aircrafts.types[flight.aircraft.type] = 0;
         }
         if (priv.aircrafts.registration[flight.aircraft.registration] === undefined) {
             priv.aircrafts.registration[flight.aircraft.registration] = 0;
         }
-        priv.aircrafts.models[flight.aircraft.model] += flight.total;
+        priv.aircrafts.types[flight.aircraft.type] += flight.total;
         priv.aircrafts.registration[flight.aircraft.registration] += flight.total;
     };
     
@@ -350,15 +350,15 @@ function Airlift () {
         if (my.options.show.arrival.time) $('<th/>').text('Time').appendTo(subtitles);
         
         // 4 - Aircraft
-        if (my.options.show.aircraft.model || my.options.show.aircraft.registration) {
+        if (my.options.show.aircraft.type || my.options.show.aircraft.registration) {
             number = $('<th/>').text('4').appendTo(numbers);
             cell = $('<th/>').text('Aircraft').appendTo(titles);
-            if (my.options.show.aircraft.model && my.options.show.aircraft.registration) {
+            if (my.options.show.aircraft.type && my.options.show.aircraft.registration) {
                 number.attr('colspan', 2);
                 cell.attr('colspan', 2);
             }
         }
-        if (my.options.show.aircraft.model) $('<th/>').text('Model').appendTo(subtitles);
+        if (my.options.show.aircraft.type) $('<th/>').text('type').appendTo(subtitles);
         if (my.options.show.aircraft.registration) $('<th/>').text('Registration').appendTo(subtitles);
         
         // 5 - Time
@@ -466,7 +466,7 @@ function Airlift () {
         space = (my.options.show.date ? 1 : 0);
         space += (my.options.show.departure.place ? 1 : 0) + (my.options.show.departure.time ? 1 : 0);
         space += (my.options.show.arrival.place ? 1 : 0) + (my.options.show.arrival.time ? 1 : 0);
-        space += (my.options.show.aircraft.model ? 1 : 0) + (my.options.show.aircraft.registration ? 1 : 0);
+        space += (my.options.show.aircraft.type ? 1 : 0) + (my.options.show.aircraft.registration ? 1 : 0);
         if (space) dateSpace.appendTo(row);
         if (space > 1) dateSpace.attr('colspan', space);
         
@@ -511,7 +511,7 @@ function Airlift () {
         if (my.options.show.arrival.place) $('<td/>').text(flight.arrival.place).appendTo(row);
         if (my.options.show.arrival.time) $('<td/>').text(flight.arrival.time).appendTo(row);
         // 4 - Aircraft
-        if (my.options.show.aircraft.model) $('<td/>').text(flight.aircraft.model).appendTo(row);
+        if (my.options.show.aircraft.type) $('<td/>').text(flight.aircraft.type).appendTo(row);
         if (my.options.show.aircraft.registration) $('<td/>').text(flight.aircraft.registration).appendTo(row);
         // 5 - Single-pilot Time
         if (my.options.show.time.single.se) $('<td/>').text(my.flightTime(flight.time.single.se)).appendTo(row);
@@ -615,12 +615,12 @@ function Airlift () {
         }
     };
     
-    this.showModels = function () {
-        $('#stats-models ul').empty();
-        var sorted = priv.aircrafts.models.sort().reverse();
+    this.showtypes = function () {
+        $('#stats-types ul').empty();
+        var sorted = priv.aircrafts.types.sort().reverse();
         for (var entry in sorted) {
            if (sorted[entry] !== undefined) {
-               $('<li/>').addClass('list-group-item').text(entry).appendTo('#stats-models ul')
+               $('<li/>').addClass('list-group-item').text(entry).appendTo('#stats-types ul')
                    .append($('<small/>').text(sorted[entry].toTimeString()).addClass('pull-right'));
            }
         }
@@ -629,7 +629,7 @@ function Airlift () {
     this.showStats = function () {
         my.showHours();
         my.showAircrafts();
-        my.showModels();
+        my.showtypes();
     };
     
     this.flights = function () {
