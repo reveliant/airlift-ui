@@ -102,6 +102,14 @@
                                         </div>
                                     </div>
                                 </fieldset>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="reset" form="new-flight-form" class="btn btn-danger" data-dismiss="modal" value="Cancel"/>
+                                <input type="button" class="btn btn-primary" data-toggle="tab" href="#new-flight-wizard-2" value="Next"/>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="new-flight-wizard-2" role="tabpanel">
+                            <div class="modal-body">
                                 <fieldset class="form-group">
                                     <legend>Pilot-in-command</legend>
                                     <div class="row">
@@ -114,14 +122,6 @@
                                         </label>
                                     </div>
                                 </fieldset>
-                            </div>
-                            <div class="modal-footer">
-                                <input type="reset" form="new-flight-form" class="btn btn-danger" data-dismiss="modal" value="Cancel"/>
-                                <input type="button" class="btn btn-primary" data-toggle="tab" href="#new-flight-wizard-2" value="Next"/>
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="new-flight-wizard-2" role="tabpanel">
-                            <div class="modal-body">
                                 <div class="row">
                                     <fieldset class="form-group col-sm-6">
                                         <div class="h4">Landings</div>
@@ -198,13 +198,21 @@
                                         </div>
                                     </fieldset>
                                 </div>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="button" class="btn btn-secondary" data-toggle="tab" href="#new-flight-wizard-1" value="Previous"/>
+                                <input type="button" class="btn btn-primary" data-toggle="tab" href="#new-flight-wizard-3" value="Next"/>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="new-flight-wizard-3" role="tabpanel">
+                            <div class="modal-body">
                                 <fieldset class="form-group">
                                     <legend>Remarks</legend>
                                     <textarea class="form-control" id="new-remarks" placeholder="Enter remarks here..."></textarea>
                                 </fieldset>
                             </div>
                             <div class="modal-footer">
-                                <input type="button" class="btn btn-secondary" data-toggle="tab" href="#new-flight-wizard-1" value="Previous"/>
+                                <input type="button" class="btn btn-secondary" data-toggle="tab" href="#new-flight-wizard-2" value="Previous"/>
                                 <input type="submit" form="new-flight-form" class="btn btn-success" value="Save"/>
                             </div>
                         </div>
