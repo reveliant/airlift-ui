@@ -1,5 +1,9 @@
 /*jshint nocomma: true, nonew: true, plusplus: true, strict: true, browser: true, devel: true, jquery: true*/
 
+const api = restful('https://airlift.oxiame.eu');
+const flightsApi = api.all('flights');
+const usersApi = api.all('users');
+
 Date.prototype.diff = function(date) {	
   'use strict';
   var diff = this - date;
@@ -31,78 +35,10 @@ Number.prototype.toTimeString = function() {
   return time.hours + ':' + (time.minutes < 10 ? '0' : '') + time.minutes;
 };
 
-function RestAPI (url) {
-  'use strict';
-  var my = this,  // Public scope
-    priv = {};  // Private scope
-  
-  priv.headers = {};
-  priv.url = url || '/api';
-  
-  this.setUrl = function (url) {
-    priv.url = url;
-  };
-  
-  this.setHeaders = function (headers) {
-    priv.headers = headers;
-  };
-  
-  this.setHeader = function (key, value) {
-    priv.headers[key] = value;
-  };
-  
-  this.get = function (url, success) {
-    return $.ajax({
-      type: 'GET',
-      url: priv.url + url,
-      success: success,
-      headers: priv.headers,
-      contentType: 'application/json; charset=UTF-8',
-      dataType: 'json'
-    });
-  };
-  
-  this.post = function (url, data, success) {
-    return $.ajax({
-      type: 'POST',
-      url: priv.url + url,
-      data: data,
-      success: success,
-      headers: priv.headers,
-      contentType: 'application/json; charset=UTF-8',
-      dataType: 'json'
-    });
-  };
-  
-  this.put = function (url, data, success) {
-    return $.ajax({
-      type: 'PUT',
-      url: priv.url + url,
-      data: data,
-      success: success,
-      headers: priv.headers,
-      contentType: 'application/json; charset=UTF-8',
-      dataType: 'json'
-    });
-  };
-  
-  this.delete = function (url, success) {
-    return $.ajax({
-      type: 'DELETE',
-      url: priv.url + url,
-      success: success,
-      headers: priv.headers,
-      contentType: 'application/json; charset=UTF-8',
-      dataType: 'json'
-    });
-  };
-}
-
 function Airlift () {
   'use strict';
   var my = this,  // Public scope
-    priv = {},  // Private scope
-    Rest = new RestAPI('https://airlift.oxiame.eu');
+    priv = {};  // Private scope
   
   priv.session = {};
   priv.flights = [];
@@ -152,6 +88,8 @@ function Airlift () {
   };
   
   this.login = function (username, password) {
+    // TODO Authentication + JWT
+    /*
     Rest.post('/user/login', null, function(data) {
       if (data.session.store !== undefined) {
         priv.session = data.session.store;
@@ -160,9 +98,25 @@ function Airlift () {
         Rest.setHeader('X-Airlift-Token', data.session.token);
       }
     });
+    */
   };
   
   this.userInfo = function () {
+    // TODO Authentication + JWT
+    var uid = 1;
+    usersApi.get(uid).then((response) => {
+      var user = response.body().data();
+      if (user.name) {
+          $('#user-name').text(user.name);
+        }
+        if (user.avatar !== undefined) {
+          $('#user-avatar').attr('src', 'img/' +  user.avatar);
+        }
+        if (user.show !== undefined) {
+          my.options.show = user.show;
+        }
+    });
+    /*
     Rest.get('/user', function(data) {
       if (data.user !== undefined) {
         if (data.user.name) {
@@ -176,6 +130,7 @@ function Airlift () {
         }
       }
     });
+    */
   };
   
   this.flightTime = function (time) {
@@ -302,12 +257,6 @@ function Airlift () {
     var flight = my.validateFlight(flt);
     priv.flights.push(flight);
     my.addToTotals(flight);
-  };
-  
-  this.addFlights = function (flights) {
-    for (var flight in flights) {
-      if (flights[flight] !== undefined) my.addFlight(flights[flight]);
-    }
   };
 
   this.showHeader = function () {
@@ -595,11 +544,11 @@ function Airlift () {
       $('[data-stats="12m-landings"]').prepend(" ").prepend($('<i/>').addClass('fa fa-check-circle text-success'));
     }
     
-    $('#stats-hours').removeClass('card-warning card-success card-info');
+    $('#stats-hours').removeClass('bg-warning bg-success bg-info');
     if (conditions) {
-      $('#stats-hours').addClass('card-success');
+      $('#stats-hours').addClass('bg-success');
     } else {
-      $('#stats-hours').addClass('card-warning');
+      $('#stats-hours').addClass('bg-warning');
     }
       
   };
@@ -633,13 +582,13 @@ function Airlift () {
   };
   
   this.flights = function () {
-  
-    Rest.get('/flights', function(data) {
-      if (data.flights !== undefined) {
-        my.addFlights(data.flights);
-        my.showTable();
-        my.showStats();
-      }
+    flightsApi.getAll().then((response) => {
+      var flightCollection = response.body();
+      flightCollection.forEach((flightEntity) => {
+        my.addFlight(flightEntity.data());
+      })
+      my.showTable();
+      my.showStats();
     });
   };
 }
