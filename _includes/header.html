@@ -1,32 +1,32 @@
-    <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+    <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark">
         <div class="container-fluid">
-            <button type="button" class="navbar-toggler hidden-sm-up" data-toggle="collapse" data-target="#airlift-navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <i class="fa fa-bars"></i>
-            </button>
             <a class="navbar-brand" href="#">
-                <i class="fa fa-plane"></i>
+                <span class="fa fa-plane"></span>
                 Airlift
             </a>
-            <div class="collapse navbar-collapse navbar-toggleable-xs" id="airlift-navbar-collapse">
-                <div class="nav navbar-nav">
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#airlift-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="airlift-navbar-collapse">
+                <nav class="navbar-nav">
                     <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#new-flight-modal"><i class="fa fa-lg fa-plus-square"></i> <span class="only">Add a flight</span></a>
                     <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#stats-modal"><i class="fa fa-lg fa-pie-chart"></i> <span class="only">Statistics</span></a>
-                </div>
-                <div class="nav navbar-nav pull-right">
+                </nav>
+                <nav class="navbar-nav ml-auto">
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">
                             <img id="user-avatar" alt="" class="rounded-circle">
                             <span id="user-name"></span>
                             <span class="caret"></span>
                         </a>
-                        <div class="dropdown-menu">
+                        <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="#">Profile</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Logout</a>
                         </div>
                     </div>
-                </div>
+                </nav>
             </div>
         </div>
     </nav>
