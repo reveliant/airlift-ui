@@ -1,28 +1,31 @@
         <div class="card-columns">
-            <div class="card card-inverse card-success" id="stats-total">
-                <div class="card-block">
-                    <h4 class="card-title">Flying time</h4>
-                    <p class="card-text"><b class="h3" data-stats="grand-total">0</b></p>
+            <div class="card bg-success" id="stats-total">
+                <div class="card-body text-white">
+                    <h4 class="card-title">Total flight hours</h4>
                 </div>
+                <ul class="list-group list-group-flush text-black">
+                    <li class="list-group-item"><b data-stats="grand-total">0:00</b> total</li>
+                    <li class="list-group-item"><b data-stats="grand-pic">0:00</b> as pilot-in-command</li>
+                    <li class="list-group-item"><b data-stats="grand-dual">0:00</b> in dual</li>
+                </ul>
             </div>
-            <div class="card card-inverse card-info" id="stats-hours">
-                <div class="card-block">
-                    <h4 class="card-title">Flying time in last 12 months</h4>
-                    <p class="card-text">of license validity</p>
+            <div class="card bg-info" id="stats-hours">
+                <div class="card-body text-white">
+                    <h4 class="card-title">License renewal</h4>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><b data-stats="12m-total">0</b> total</li>
+                <ul class="list-group list-group-flush text-black">
+                    <li class="list-group-item"><b data-stats="12m-total">0:00</b> total</li>
                     <li class="list-group-item"><b data-stats="12m-pic">0:00</b> as pilot-in-command</li>
                     <li class="list-group-item"><b data-stats="12m-dual">0:00</b> in dual</li>
                     <li class="list-group-item"><b data-stats="12m-landings">0</b> landings</li>
                 </ul>
             </div>
-            <div class="card card-inverse card-info" id="stats-types">
-                <h4 class="card-block card-title">Types</h4>
+            <div class="card bg-info" id="stats-types">
+                <h4 class="card-body text-white card-title">Types</h4>
                 <ul class="list-group list-group-flush"></ul>
             </div>
-            <div class="card card-inverse card-info" id="stats-aircraft">
-                <h4 class="card-block card-title">Aircrafts</h4>
+            <div class="card bg-info" id="stats-aircraft">
+                <h4 class="card-body text-white card-title">Aircrafts</h4>
                 <ul class="list-group list-group-flush"></ul>
             </div>
         </div>
