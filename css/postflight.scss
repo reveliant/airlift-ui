@@ -1,20 +1,66 @@
 ---
 ---
-body {
-    padding-top: 70px;
+$primary: #5bc0df;
+$primary-faded: #1f85a3;
+$primary-light: lighten($primary, 15%);
+$mixed-bg: mix($primary, $primary-faded);
+
+html, body {
+  height: 100%;
 }
+
+body {
+  padding-top: 70px;
+  //background-color: #e7f6fb;
+}
+
+svg {
+    height: 1.4em;
+    vertical-align: -20%;
+  }
 
 .navbar {
-  background-color: mix(#1f85a3, #5bc0df);
-}
+  background-color: $mixed-bg;
+  
+  .navbar-brand {
+    color: white;
+    fill: white;
+    font-size: 1.3rem;
+    
+    svg {
+      vertical-align: -20%;
+    }
+  }
 
-.navbar-brand svg {
-  fill: white;
-  vertical-align: -20%;
-}
+  .navbar-nav .nav-link {
+    color: rgba(255,255,255,.65);
+    fill: rgba(255,255,255,.65);
+    
+    svg {
+      vertical-align: -25%;
+    }
+    
+    img {
+      opacity: .75;
+    }
+  
+    &:focus, &:hover {
+      color: rgba(255,255,255,.85);
+      fill: rgba(255,255,255,.85);
+      
+      img {
+        opacity: 1;
+      }
+    }
+  }
 
-#user-avatar {
+  #user-avatar {
     max-width: 24px;
+  }
+}
+
+.modal-title svg {
+  vertical-align: -20%;
 }
 
 .table > thead > tr {
@@ -24,7 +70,66 @@ body {
   }
 
   &.subth > th {
-      font-weight: normal;
-      font-size: 80%;
+    font-weight: normal;
+    font-size: 80%;
+  }
+}
+
+.signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/img/background.jpg');
+  background-size: cover;
+  padding-top: 0;
+  
+  .card {
+    border: 1em solid $mixed-bg;
+    border-top: none;
+    border-radius: 0;
+    margin-bottom: 10%;
+
+    .card-header {
+      border-radius: 0;
+      background-color: $mixed-bg;
+      color: white;
+      fill: white;
+    }
+
+    .card-title {
+      font-size: 2.4rem;
+
+      svg {
+        vertical-align: -20%;
+      }
+    }
+
+    .card-body {
+      padding-bottom: 0;
+
+      .btn {
+        padding: .5rem 2rem;
+      }
+    }
+  }
+}
+
+.stepwizard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .stepwizard-step {
+    text-align: center;
+    min-width: 20%;
+
+    .btn {
+      border-radius: 50%;
+      line-height: 1;
+    }
+
+    p {
+      margin: 0;
+    }
   }
 }

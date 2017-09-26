@@ -1,35 +1,45 @@
-    <nav class="navbar navbar-expand-sm fixed-top navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" width="30">
-                  <path d="M18.752 15.538c-0.097 0.266-0.822 1.002-6.029-0.878l-5.105-1.843c-1.777-0.641-4.278-1.649-5.258-2.217-0.686-0.397-0.836-1.282-0.836-1.282s-0.163-2.956-0.263-3.684 0.095-0.853 0.796-0.492c0.436 0.225 1.865 2.562 2.464 3.567 1.512 0.381 2.862 0.761 3.493 0.949-0.257-1.717-0.74-4.928-0.913-5.933-0.166-0.963 0.55-0.535 0.55-0.535 0.331 0.19 0.983 0.661 1.206 1.002 1.522 2.326 3.672 6.6 3.836 6.928 0.896 0.28 2.277 0.733 3.102 1.03 2.156 0.779 3.087 3.034 2.957 3.388z"/>
-                  <rect x="1.2288" y="16.8" width="17.527" height="1" ry=".35"/>
-                </svg>
-                {{ site.title }}
+  <nav class="navbar navbar-expand-sm fixed-top navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <svg viewBox="0 0 20 20">
+          <path d="M18.752 15.538c-0.097 0.266-0.822 1.002-6.029-0.878l-5.105-1.843c-1.777-0.641-4.278-1.649-5.258-2.217-0.686-0.397-0.836-1.282-0.836-1.282s-0.163-2.956-0.263-3.684 0.095-0.853 0.796-0.492c0.436 0.225 1.865 2.562 2.464 3.567 1.512 0.381 2.862 0.761 3.493 0.949-0.257-1.717-0.74-4.928-0.913-5.933-0.166-0.963 0.55-0.535 0.55-0.535 0.331 0.19 0.983 0.661 1.206 1.002 1.522 2.326 3.672 6.6 3.836 6.928 0.896 0.28 2.277 0.733 3.102 1.03 2.156 0.779 3.087 3.034 2.957 3.388z"/>
+          <rect x="1.2288" y="16.8" width="17.527" height="1" ry=".35"/>
+        </svg>
+        <span class="only">{{ site.title }}</span>
+      </a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#airlift-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="airlift-navbar-collapse">
+        <nav class="navbar-nav">
+          <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#new-flight-modal">
+            <svg viewBox="0 0 20 20">
+              <path d="M16,2H4C2.9,2,2,2.9,2,4v12c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V4C18,2.9,17.1,2,16,2z M15,11h-4v4H9v-4H5V9h4V5h2v4h4V11z"/>
+            </svg>
+            <span class="only">Add a flight</span>
+          </a>
+          <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#stats-modal">
+            <svg viewBox="0 0 20 20">
+              <path d="M11,0.958v9.039C11,10.551,10.551,11,9.997,11H0.958c0.498,4.555,4.355,8.1,9.042,8.1c5.026,0,9.1-4.074,9.1-9.1C19.1,5.312,15.555,1.456,11,0.958z M9,0.958C4.774,1.42,1.42,4.774,0.958,9H9V0.958z"/>
+            </svg>
+            <span class="only">Statistics</span>
+          </a>
+        </nav>
+        <nav class="navbar-nav ml-auto">
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">
+              <img id="user-avatar" alt="" class="rounded-circle">
+              <span id="user-name"></span>
+              <span class="caret"></span>
             </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#airlift-navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="airlift-navbar-collapse">
-                <nav class="navbar-nav">
-                    <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#new-flight-modal"><i class="fa fa-lg fa-plus-square"></i> <span class="only">Add a flight</span></a>
-                    <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#stats-modal"><i class="fa fa-lg fa-pie-chart"></i> <span class="only">Statistics</span></a>
-                </nav>
-                <nav class="navbar-nav ml-auto">
-                    <div class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button">
-                            <img id="user-avatar" alt="" class="rounded-circle">
-                            <span id="user-name"></span>
-                            <span class="caret"></span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="#">Profile</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Logout</a>
-                        </div>
-                    </div>
-                </nav>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="#">Profile</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Sign out</a>
             </div>
-        </div>
-    </nav>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </nav>
