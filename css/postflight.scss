@@ -1,0 +1,30 @@
+---
+---
+body {
+    padding-top: 70px;
+}
+
+.navbar {
+  background-color: mix(#1f85a3, #5bc0df);
+}
+
+.navbar-brand svg {
+  fill: white;
+  vertical-align: -20%;
+}
+
+#user-avatar {
+    max-width: 24px;
+}
+
+.table > thead > tr {
+  &> th {
+    vertical-align: top;
+    font-size: 90%;
+  }
+
+  &.subth > th {
+      font-weight: normal;
+      font-size: 80%;
+  }
+}
