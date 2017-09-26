@@ -1,0 +1,34 @@
+---
+layout: null
+---
+<!doctype html>
+<html>
+{% include head.html %}
+<body class="signin">
+  <div class="card card-signin">
+    <div class="card-header card-title">
+      <svg viewBox="0 0 20 20">
+        <path d="M18.752 15.538c-0.097 0.266-0.822 1.002-6.029-0.878l-5.105-1.843c-1.777-0.641-4.278-1.649-5.258-2.217-0.686-0.397-0.836-1.282-0.836-1.282s-0.163-2.956-0.263-3.684 0.095-0.853 0.796-0.492c0.436 0.225 1.865 2.562 2.464 3.567 1.512 0.381 2.862 0.761 3.493 0.949-0.257-1.717-0.74-4.928-0.913-5.933-0.166-0.963 0.55-0.535 0.55-0.535 0.331 0.19 0.983 0.661 1.206 1.002 1.522 2.326 3.672 6.6 3.836 6.928 0.896 0.28 2.277 0.733 3.102 1.03 2.156 0.779 3.087 3.034 2.957 3.388z"/>
+          <rect x="1.2288" y="16.8" width="17.527" height="1" ry=".35"/>
+      </svg>
+      {{ site.title }}
+    </div>
+    <div class="card-body">
+      <form id="signin-form">
+        <fieldset class="form-group">
+          <label for="signin-username">Username</label>
+          <input type="text" class="form-control" id="signin-username" name="username">
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="signin-password">Password</label>
+          <input type="password" class="form-control" id="signin-password" name="password">
+        </fieldset>
+        <fieldset class="form-group text-center">
+          <input type="submit" class="btn btn-lg btn-info" value="Sign in">
+        </fieldset>
+      </form>
+    </div>
+  </div>
+{% include footer.html %}
+</body>
+</html>
