@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<!-- Generator: Adobe Illustrator 18.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -7,117 +7,72 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="100"
-   height="100"
-   id="svg2"
    version="1.1"
-   inkscape:version="0.48.2 r9819"
+   id="Aircraft_landing"
+   x="0px"
+   y="0px"
+   viewBox="0 0 20 20"
+   enable-background="new 0 0 20 20"
+   xml:space="preserve"
    sodipodi:docname="favicon.svg"
-   inkscape:export-filename="D:\Documents\Web\airlift\public\favicon16.png"
-   inkscape:export-xdpi="14.4"
-   inkscape:export-ydpi="14.4">
-  <defs
-     id="defs4" />
-  <sodipodi:namedview
-     id="base"
+   inkscape:version="0.92.1 r15371"><metadata
+     id="metadata9"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+     id="defs7"><linearGradient
+       inkscape:collect="always"
+       id="linearGradient4494"><stop
+         style="stop-color:#1f85a3;stop-opacity:1"
+         offset="0"
+         id="stop4490" /><stop
+         style="stop-color:#5bc0df;stop-opacity:1"
+         offset="1"
+         id="stop4492" /></linearGradient><linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4494"
+       id="linearGradient4500"
+       x1="-0.13258252"
+       y1="9.0719223"
+       x2="20.088388"
+       y2="16.850098"
+       gradientUnits="userSpaceOnUse" /></defs><sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="8.2899999"
-     inkscape:cx="36.072304"
-     inkscape:cy="58.755515"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     showgrid="false"
-     showguides="true"
-     inkscape:guide-bbox="true"
      inkscape:window-width="1920"
-     inkscape:window-height="1018"
+     inkscape:window-height="1017"
+     id="namedview5"
+     showgrid="false"
+     inkscape:zoom="11.313709"
+     inkscape:cx="20.528962"
+     inkscape:cy="-3.9950209"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
-  <metadata
-     id="metadata7">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-     inkscape:label="Calque 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(0,-952.36218)">
-    <rect
-       style="color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-       id="rect3880"
-       x="0"
-       y="977.36218"
-       width="100"
-       height="50"
-       ry="6.755127"
-       inkscape:export-xdpi="57"
-       inkscape:export-ydpi="57" />
-    <path
-       style="color:#000000;fill:#5bc0df;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:1.98055375;stroke-miterlimit:4;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-       d="m 65.009723,953.35246 -25.011575,0 -17.007871,49.00974 17.007871,49.0097 25.011575,0 -12.005556,-49.0097 z"
-       id="rect3015"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccc" />
-    <path
-       sodipodi:type="arc"
-       style="color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-       id="path3018"
-       sodipodi:cx="72.85714"
-       sodipodi:cy="27.5"
-       sodipodi:rx="6.25"
-       sodipodi:ry="4.8214288"
-       d="m 79.10714,27.5 a 6.25,4.8214288 0 1 1 -12.5,0 6.25,4.8214288 0 1 1 12.5,0 z"
-       transform="matrix(1,0,0,1.2962962,-31.607139,955.46403)" />
-    <path
-       sodipodi:type="arc"
-       style="color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-       id="path3018-1"
-       sodipodi:cx="72.85714"
-       sodipodi:cy="27.5"
-       sodipodi:rx="6.25"
-       sodipodi:ry="4.8214288"
-       d="m 79.10714,27.5 a 6.25,4.8214288 0 1 1 -12.5,0 6.25,4.8214288 0 1 1 12.5,0 z"
-       transform="matrix(1,0,0,1.2962963,-31.60714,977.96403)" />
-    <text
-       xml:space="preserve"
-       style="font-size:48.52276993px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#373a3f;fill-opacity:1;fill-rule:nonzero;stroke:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans Bold"
-       x="0.21797334"
-       y="905.93774"
-       id="text3038"
-       sodipodi:linespacing="125%"
-       transform="scale(0.88670146,1.1277753)"><tspan
-         sodipodi:role="line"
-         id="tspan3040"
-         x="0.21797334"
-         y="905.93774"
-         style="font-size:48.52276993px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#373a3f;fill-opacity:1;fill-rule:nonzero;stroke:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans Bold">0</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:48.14960861px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#373a3f;fill-opacity:1;fill-rule:nonzero;stroke:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans Bold"
-       x="63.895996"
-       y="898.97052"
-       id="text3038-8"
-       sodipodi:linespacing="125%"
-       transform="scale(0.87988234,1.1365156)"><tspan
-         sodipodi:role="line"
-         id="tspan3040-2"
-         x="63.895996"
-         y="898.97052"
-         style="font-size:48.14960861px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:-3.72344923px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#373a3f;fill-opacity:1;fill-rule:nonzero;stroke:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans Bold">00</tspan></text>
-  </g>
-</svg>
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Aircraft_landing" /><rect
+     style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;vector-effect:none;fill:url(#linearGradient4500);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.88976383;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.88976378, 7.55905512000000000;stroke-dashoffset:0;stroke-opacity:1;marker:none;paint-order:stroke fill markers;enable-background:accumulate"
+     id="rect4488"
+     width="20"
+     height="20"
+     x="0"
+     y="0"
+     ry="0" /><path
+     d="M 18.752,15.538 C 18.655,15.804 17.93,16.54 12.723,14.66 L 7.618,12.817 C 5.841,12.176 3.34,11.168 2.36,10.6 1.674,10.203 1.524,9.318 1.524,9.318 1.524,9.318 1.361,6.362 1.261,5.634 1.161,4.906 1.356,4.781 2.057,5.142 2.493,5.367 3.922,7.704 4.521,8.709 6.033,9.09 7.383,9.47 8.014,9.658 7.757,7.941 7.274,4.73 7.101,3.725 6.935,2.762 7.651,3.19 7.651,3.19 c 0.331,0.19 0.983,0.661 1.206,1.002 1.522,2.326 3.672,6.6 3.836,6.928 0.896,0.28 2.277,0.733 3.102,1.03 2.156,0.779 3.087,3.034 2.957,3.388 z"
+     id="path2"
+     inkscape:connector-curvature="0"
+     style="fill:#ffffff" /><rect
+     style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:3.24044228;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:3.24044213, 12.96176863;stroke-dashoffset:0;stroke-opacity:1;marker:none;paint-order:stroke fill markers;enable-background:accumulate"
+     id="rect4486"
+     width="17.527"
+     height="1.0000001"
+     x="1.2288135"
+     y="16.5"
+     ry="0.50000006" /></svg>
