@@ -1,110 +1,27 @@
 ---
-layout: page
+layout: fullpage
 ---
-    <table class="table table-hover table-bordered" id="flight-table">
-      <thead class="thead-default">
-        <tr>
-          <th>1</th>
-          <th colspan="2">2</th>
-          <th colspan="2">3</th>
-          <th colspan="2">4</th>
-          <th colspan="4">5</th>
-          <th>6</th>
-          <th>7</th>
-          <th colspan="2">8</th>
-          <th colspan="2">9</th>
-          <th colspan="4">10</th>
-          <th colspan="3">11</th>
-          <th>12</th>
-        </tr>
-        <tr>
-          <th rowspan="2">Date</th>
-          <th colspan="2">Departure</th>
-          <th colspan="2">Arrival</th>
-          <th colspan="2">Aircraft</th>
-          <th colspan="2">Single-pilot</th>
-          <th colspan="2">Multi-pilot</th>
-          <th rowspan="2">Total time</th>
-          <th rowspan="2">Pilot-in-command</th>
-          <th colspan="2">Landings</th>
-          <th colspan="2">Oper. cond.</th>
-          <th colspan="4">Pilot function time</th>
-          <th colspan="3">Synthetic training</th>
-          <th rowspan="2">Remark</th>
-        </tr>
-        <tr class="subth">
-          <th>Place</th>
-          <th>Time</th>
-          <th>Place</th>
-          <th>Time</th>
-          <th>Type</th>
-          <th>Registration</th>
-          <th>SE</th>
-          <th>ME</th>
-          <th>Multi-pilot</th>
-          <th>Turbine</th>
-          <th>Day</th>
-          <th>Night</th>
-          <th>Night</th>
-          <th>IFR</th>
-          <th>PiC</th>
-          <th>Co-pilot</th>
-          <th>Dual</th>
-          <th>Instructor</th>
-          <th>Date</th>
-          <th>Type</th>
-          <th>Time</th>
-        </tr>
-      </thead>
-      <tbody id="flight-records">
-        <!--<tr>
-          <td>Date</td>
-          <td>Place</td>
-          <td>Time</td>
-          <td>Place</td>
-          <td>Time</td>
-          <td>Mark, model, variant</td>
-          <td>Registration</td>
-          <td>SE</td>
-          <td>ME</td>
-          <td>Multi-pilot</td>
-          <td>Turbine</td>
-          <td>Total</td>
-          <td>Name of PiC</td>
-          <td>Day</td>
-          <td>Night</td>
-          <td>Night</td>
-          <td>IFR</td>
-          <td>Pilot-in-command</td>
-          <td>Co-pilot</td>
-          <td>Dual</td>
-          <td>Instructor</td>
-          <td>Date</td>
-          <td>Type</td>
-          <td>Time</td>
-          <td>Remark</td>
-      </tr>-->
-      </tbody>
-      <tfoot class="thead-default">
-        <tr>
-          <th colspan="7">Total time</th>
-          <th>0:00</th>
-          <th>0:00</th>
-          <th>0:00</th>
-          <th>0:00</th>
-          <th>0:00</th>
-          <th></th>
-          <th>0</th>
-          <th>0</th>
-          <th>0:00</th>
-          <th>0:00</th>
-          <th>0:00</th>
-          <th>0:00</th>
-          <th>0:00</th>
-          <th>0:00</th>
-          <th colspan="2"></th>
-          <th>0:00</th>
-          <th></th>
-        </tr>
-      </tfoot>
-    </table>
+  <div class="card card-signin">
+    <div class="card-header card-title">
+      <svg viewBox="0 0 20 20">
+        <path d="m18.488 13.657c-0.09408 0.24919-0.79727 0.93868-5.8476-0.82252l-4.9514-1.7265c-1.7235-0.6005-4.1493-1.5448-5.0998-2.0769-0.66536-0.37191-0.81085-1.201-0.81085-1.201s-0.1581-2.7692-0.25509-3.4512c-0.096991-0.682 0.092142-0.7991 0.77205-0.46091 0.42288 0.21078 1.8089 2.4001 2.3899 3.3416 1.4665 0.35692 2.7759 0.71291 3.3879 0.88903-0.24927-1.6085-0.71773-4.6166-0.88553-5.5581-0.16101-0.90215 0.53345-0.50119 0.53345-0.50119 0.32104 0.17799 0.95342 0.61923 1.1697 0.93868 1.4762 2.179 3.5615 6.1829 3.7206 6.4902 0.86904 0.26231 2.2085 0.68668 3.0087 0.96491 2.0911 0.72977 2.9941 2.8423 2.868 3.1739z" stroke-width=".95322"/>
+        <rect x="1.5" y="16.5" width="17" height="1" ry=".5"/>
+      </svg>
+      {{ site.title }}
+    </div>
+    <div class="card-body">
+      <form id="signin-form">
+        <fieldset class="form-group">
+          <label for="signin-username">Username</label>
+          <input type="text" class="form-control" id="signin-username" name="username">
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="signin-password">Password</label>
+          <input type="password" class="form-control" id="signin-password" name="password">
+        </fieldset>
+        <fieldset class="form-group text-center">
+          <input type="submit" class="btn btn-lg btn-info" value="Sign in">
+        </fieldset>
+      </form>
+    </div>
+  </div>
